@@ -18,6 +18,7 @@ namespace WebApi.Controllers
         public MoviesController(MoviesContext context)
         {
             _context = context;
+            _context.Database.EnsureCreated();
         }
 
         // GET: api/Movies

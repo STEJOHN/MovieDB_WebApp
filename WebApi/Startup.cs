@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
 using WebApi.Models;
 
 namespace WebApi
@@ -21,9 +21,11 @@ namespace WebApi
         {
             services.AddControllers();
 
-            services.AddDbContext<MoviesContext>(opt =>
-                                               opt.UseSqlServer("MoviesDB"));
-            
+            services.AddDbContext<MoviesContext>(opt => opt.UseSqlServer("Data Source=Windows10-PC\\SQLSERVER2019;Initial Catalog=master;User ID=sa;Password=Temp123!"));
+
+            //services.AddDbContext<MoviesContext>(opt =>
+            //    opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -31,7 +33,7 @@ namespace WebApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+
             }
 
             app.UseHttpsRedirection();
