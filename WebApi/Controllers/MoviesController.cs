@@ -80,7 +80,8 @@ namespace WebApi.Controllers
             _context.Movie.Add(movies);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovies", new { id = movies.Id }, movies);
+            return CreatedAtAction(nameof(GetMovie), new { id = movies.Id }, movies);
+
         }
 
         // DELETE: api/Movies/5
