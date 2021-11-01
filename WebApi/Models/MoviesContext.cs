@@ -8,7 +8,7 @@ namespace WebApi.Models
                : base(options)
         {
         }
-
+        //Movie is name of DB in SQL
         public DbSet<Movies> Movie { get; set; }
     }
 }
