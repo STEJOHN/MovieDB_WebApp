@@ -2,10 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System;
 using System.Threading.Tasks;
 using WebApi.Models;
-using WebApi.Controllers;
 
 namespace WebApi.Controllers
 {

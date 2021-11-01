@@ -21,11 +21,7 @@ namespace WebApi
         {
             services.AddControllers();
 
-            services.AddDbContext<MoviesContext>(opt => opt.UseSqlServer("Data Source=Windows10-PC\\SQLSERVER2019;Initial Catalog=master;User ID=sa;Password=Temp123!"));
-
-            //services.AddDbContext<MoviesContext>(opt =>
-            //    opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddDbContext<MoviesContext>(opt => opt.UseSqlServer("Data Source=.\\SQLSERVER2019;Initial Catalog=MoviesDB;User ID=sa;Password=Temp123!"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
