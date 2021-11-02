@@ -29,6 +29,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id}")]
+        // data type must match db data type
         public async Task<ActionResult<MoviesDTO>> GetMovies(int id)
         {
             var movies = await _context.Movie.FindAsync(id);
